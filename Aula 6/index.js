@@ -1,7 +1,11 @@
-const express = require('express');
+const express = require("express");
 const app = express();
 const handlebars = require("express-handlebars");
-
+const sequelize = require("sequelize");
+const sequelize = new sequelize("aula_6", "root", "123456", {
+  host: "localhost",
+  dialect: "mysql",
+});
 
 // Config
 // Template Engine
