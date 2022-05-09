@@ -1,16 +1,22 @@
 const express = require("express");
 const app = express();
 const handlebars = require("express-handlebars");
-const sequelize = require("sequelize");
-const sequelize = new sequelize("aula_6", "root", "123456", {
-  host: "localhost",
-  dialect: "mysql",
-});
+const Sequelize = require("sequelize");
 
 // Config
-// Template Engine
-app.engine("handlebars", handlebars({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+  // Template Engine
+    app.engine("handlebars", handlebars({ defaultLayout: "main" }));
+    app.set("view engine", "handlebars");
+  // Conexão MySQL
+    const sequelize = new Sequelize("aula_6", "root", "123456", {
+      host: "localhost",
+      dialect: "mysql",
+    });
+
+// Rotas
+    app.get(  '/cadastro', function (req, res){
+      res.send('Rota de Cadastro de Posts');
+    })
 
 app.listen(8081, function () {
   console.log("Servidor rodando na url http://localhost:8081");
