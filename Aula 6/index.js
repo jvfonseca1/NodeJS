@@ -18,6 +18,9 @@ const Sequelize = require("sequelize");
     app.use(bodyParser.json())
 
 // Rotas
+    app.get("/", function (req, res){
+      res.render('home')
+    })
     app.get(  '/cadastro', function (req, res){
       res.render('formularios')
     })
