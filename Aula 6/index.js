@@ -2,17 +2,13 @@ const express = require("express");
 const app = express();
 const  {engine}  = require("express-handlebars");
 const bodyParser = require("body-parser");
-const Sequelize = require("sequelize");
+
 
 // Config
   // Template Engine
     app.engine("handlebars", engine({ defaultLayout: "main" }));
     app.set("view engine", "handlebars");
-  // Conexão MySQL
-    const sequelize = new Sequelize("aula_6", "root", "123456", {
-      host: "localhost",
-      dialect: "mysql",
-    });
+
   //Body Parser
     app.use(bodyParser.urlencoded({extended: false}));
     app.use(bodyParser.json())
