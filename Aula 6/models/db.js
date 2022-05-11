@@ -10,3 +10,4 @@ const Sequelize = require("sequelize");
         Sequelize: Sequelize,
         sequelize: sequelize
     }
+    
